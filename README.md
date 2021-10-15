@@ -1,0 +1,2 @@
+# beatorajaCustomFolder
+beatorajaのカスタムフォルダーに機能を足しました。
