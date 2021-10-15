@@ -1,37 +1,849 @@
 [
 {
-	"name":"MY BEST",
-	"sql":"playcount > 0 ORDER BY playcount DESC LIMIT 10"
+	"name":"BEST 30",
+	"sql":"playcount > 0 ORDER BY playcount DESC LIMIT 30"
 },
 
 {
-	"name":"FAVORITE SONG",
+	"name":"お気に入り楽曲",
 	"sql":"favorite & 1 != 0"
 },
 {
-	"name":"FAVORITE CHART",
+	"name":"お気に入り譜面",
 	"sql":"favorite & 2 != 0"
 },
 {
-	"name":"INVISIBLE SONG",
+	"name":"非表示の楽曲",
 	"sql":"favorite & 4 != 0",
 	"showall" : true
 },
 {
-	"name":"INVISIBLE CHART",
+	"name":"非表示の譜面",
 	"sql":"favorite & 8 != 0",
 	"showall" : true
 },
 
 {
-	"name":"CLEAR TYPE",
+	"name":"楽曲名",
 	"folder":[
 		{
-			"name":"FULL COMBO",
-			"sql":"score.clear >= 8"
+			"name":"A",
+			"sql":"lower(title) LIKE 'a%' OR title LIKE 'Ａ%' OR title LIKE 'ａ%'"
 		},
 		{
-			"name":"EX HARD CLEAR",
+			"name":"B",
+			"sql":"lower(title) LIKE 'b%' OR title LIKE 'Ｂ%' OR title LIKE 'ｂ%'"
+		},
+		{
+			"name":"C",
+			"sql":"lower(title) LIKE 'c%' OR title LIKE 'Ｃ%' OR title LIKE 'ｃ%'"
+		},
+		{
+			"name":"D",
+			"sql":"lower(title) LIKE 'd%' OR title LIKE 'Ｄ%' OR title LIKE 'ｄ%'"
+		},
+		{
+			"name":"E",
+			"sql":"lower(title) LIKE 'e%' OR title LIKE 'Ｅ%' OR title LIKE 'ｅ%'"
+		},
+		{
+			"name":"F",
+			"sql":"lower(title) LIKE 'f%' OR title LIKE 'Ｆ%' OR title LIKE 'ｆ%'"
+		},
+		{
+			"name":"G",
+			"sql":"lower(title) LIKE 'g%' OR title LIKE 'Ｇ%' OR title LIKE 'ｇ%'"
+		},
+		{
+			"name":"H",
+			"sql":"lower(title) LIKE 'h%' OR title LIKE 'Ｈ%' OR title LIKE 'ｈ%'"
+		},
+		{
+			"name":"I",
+			"sql":"lower(title) LIKE 'i%' OR title LIKE 'Ｉ%' OR title LIKE 'ｉ%'"
+		},
+		{
+			"name":"J",
+			"sql":"lower(title) LIKE 'j%' OR title LIKE 'Ｊ%' OR title LIKE 'ｊ%'"
+		},
+		{
+			"name":"K",
+			"sql":"lower(title) LIKE 'k%' OR title LIKE 'Ｋ%' OR title LIKE 'ｋ%'"
+		},
+		{
+			"name":"L",
+			"sql":"lower(title) LIKE 'l%' OR title LIKE 'Ｌ%' OR title LIKE 'ｌ%'"
+		},
+		{
+			"name":"M",
+			"sql":"lower(title) LIKE 'm%' OR title LIKE 'Ｍ%' OR title LIKE 'ｍ%'"
+		},
+		{
+			"name":"N",
+			"sql":"lower(title) LIKE 'n%' OR title LIKE 'Ｎ%' OR title LIKE 'ｎ%'"
+		},
+		{
+			"name":"O",
+			"sql":"lower(title) LIKE 'o%' OR title LIKE 'Ｏ%' OR title LIKE 'ｏ%'"
+		},
+		{
+			"name":"P",
+			"sql":"lower(title) LIKE 'p%' OR title LIKE 'Ｐ%' OR title LIKE 'ｐ%'"
+		},
+		{
+			"name":"Q",
+			"sql":"lower(title) LIKE 'q%' OR title LIKE 'Ｑ%' OR title LIKE 'ｑ%'"
+		},
+		{
+			"name":"R",
+			"sql":"lower(title) LIKE 'r%' OR title LIKE 'Ｒ%' OR title LIKE 'ｒ%'"
+		},
+		{
+			"name":"S",
+			"sql":"lower(title) LIKE 's%' OR title LIKE 'Ｓ%' OR title LIKE 'ｓ%'"
+		},
+		{
+			"name":"T",
+			"sql":"lower(title) LIKE 't%' OR title LIKE 'Ｔ%' OR title LIKE 'ｔ%'"
+		},
+		{
+			"name":"U",
+			"sql":"lower(title) LIKE 'u%' OR title LIKE 'Ｕ%' OR title LIKE 'ｕ%'"
+		},
+		{
+			"name":"V",
+			"sql":"lower(title) LIKE 'v%' OR title LIKE 'Ｖ%' OR title LIKE 'ｖ%'"
+		},
+		{
+			"name":"W",
+			"sql":"lower(title) LIKE 'w%' OR title LIKE 'Ｗ%' OR title LIKE 'ｗ%'"
+		},
+		{
+			"name":"X",
+			"sql":"lower(title) LIKE 'x%' OR title LIKE 'Ｘ%' OR title LIKE 'ｘ%'"
+		},
+		{
+			"name":"Y",
+			"sql":"lower(title) LIKE 'y%' OR title LIKE 'Ｙ%' OR title LIKE 'ｙ%'"
+		},
+		{
+			"name":"Z",
+			"sql":"lower(title) LIKE 'z%' OR title LIKE 'Ｚ%' OR title LIKE 'ｚ%'"
+		},
+		{
+			"name":"0 - 9",
+			"sql":"title BETWEEN '0' AND ':' OR title BETWEEN '０' AND '９' OR title LIKE '９%'"
+		},
+		{
+			"name":"あ行",
+			"sql":"title BETWEEN 'ぁ' AND 'か' OR title BETWEEN 'ァ' AND 'カ' OR title BETWEEN 'ヴ' AND 'ヵ'" 
+		},
+		{
+			"name":"か行",
+			"sql":"title BETWEEN 'か' AND 'さ' OR title BETWEEN 'カ' AND 'サ' OR title BETWEEN 'ヵ' AND 'ヶ' OR title LIKE 'ヶ%'" 
+		},
+		{
+			"name":"さ行",
+			"sql":"title BETWEEN 'さ' AND 'た' OR title BETWEEN 'サ' AND 'タ'" 
+		},
+		{
+			"name":"た行",
+			"sql":"title BETWEEN 'た' AND 'な' OR title BETWEEN 'タ' AND 'ナ'" 
+		},
+		{
+			"name":"な行",
+			"sql":"title BETWEEN 'な' AND 'は' OR title BETWEEN 'ナ' AND 'ハ'" 
+		},
+		{
+			"name":"は行",
+			"sql":"title BETWEEN 'は' AND 'ま' OR title BETWEEN 'ハ' AND 'マ'" 
+		},
+		{
+			"name":"ま行",
+			"sql":"title BETWEEN 'ま' AND 'ゃ' OR title BETWEEN 'マ' AND 'ャ'" 
+		},
+		{
+			"name":"や行",
+			"sql":"title BETWEEN 'ゃ' AND 'ら' OR title BETWEEN 'ャ' AND 'ラ'" 
+		},
+		{
+			"name":"ら行",
+			"sql":"title BETWEEN 'ら' AND 'わ' OR title BETWEEN 'ラ' AND 'ワ'" 
+		},
+		{
+			"name":"わ行",
+			"sql":"title BETWEEN 'わ' AND 'ん' OR title LIKE 'ん%' OR title BETWEEN 'ワ' AND 'ヴ'" 
+		},
+		{
+			"name":"記号・漢字・その他",
+			"sql":"lower(title) NOT BETWEEN 'a' AND '{' AND title NOT BETWEEN 'Ａ' AND 'Ｚ' AND title NOT LIKE 'Ｚ%' AND title NOT BETWEEN 'ａ' AND 'ｚ' AND title NOT LIKE 'ｚ%' AND title NOT BETWEEN '0' AND ':' AND title NOT BETWEEN '0' AND ':' AND title NOT BETWEEN '０' AND '９' AND title NOT LIKE '９%' AND title NOT BETWEEN 'ぁ' AND 'ん' AND title NOT BETWEEN 'ァ' AND 'ヶ' AND title NOT LIKE 'ん%' AND title NOT LIKE 'ヶ%'" 
+		}
+	]
+},
+
+{
+	"name":"アーティスト名",
+	"folder":[
+		{
+			"name":"A",
+			"sql":"lower(artist) LIKE 'a%' OR artist LIKE 'Ａ%' OR artist LIKE 'ａ%'"
+		},
+		{
+			"name":"B",
+			"sql":"lower(artist) LIKE 'b%' OR artist LIKE 'Ｂ%' OR artist LIKE 'ｂ%'"
+		},
+		{
+			"name":"C",
+			"sql":"lower(artist) LIKE 'c%' OR artist LIKE 'Ｃ%' OR artist LIKE 'ｃ%'"
+		},
+		{
+			"name":"D",
+			"sql":"lower(artist) LIKE 'd%' OR artist LIKE 'Ｄ%' OR artist LIKE 'ｄ%'"
+		},
+		{
+			"name":"E",
+			"sql":"lower(artist) LIKE 'e%' OR artist LIKE 'Ｅ%' OR artist LIKE 'ｅ%'"
+		},
+		{
+			"name":"F",
+			"sql":"lower(artist) LIKE 'f%' OR artist LIKE 'Ｆ%' OR artist LIKE 'ｆ%'"
+		},
+		{
+			"name":"G",
+			"sql":"lower(artist) LIKE 'g%' OR artist LIKE 'Ｇ%' OR artist LIKE 'ｇ%'"
+		},
+		{
+			"name":"H",
+			"sql":"lower(artist) LIKE 'h%' OR artist LIKE 'Ｈ%' OR artist LIKE 'ｈ%'"
+		},
+		{
+			"name":"I",
+			"sql":"lower(artist) LIKE 'i%' OR artist LIKE 'Ｉ%' OR artist LIKE 'ｉ%'"
+		},
+		{
+			"name":"J",
+			"sql":"lower(artist) LIKE 'j%' OR artist LIKE 'Ｊ%' OR artist LIKE 'ｊ%'"
+		},
+		{
+			"name":"K",
+			"sql":"lower(artist) LIKE 'k%' OR artist LIKE 'Ｋ%' OR artist LIKE 'ｋ%'"
+		},
+		{
+			"name":"L",
+			"sql":"lower(artist) LIKE 'l%' OR artist LIKE 'Ｌ%' OR artist LIKE 'ｌ%'"
+		},
+		{
+			"name":"M",
+			"sql":"lower(artist) LIKE 'm%' OR artist LIKE 'Ｍ%' OR artist LIKE 'ｍ%'"
+		},
+		{
+			"name":"N",
+			"sql":"lower(artist) LIKE 'n%' OR artist LIKE 'Ｎ%' OR artist LIKE 'ｎ%'"
+		},
+		{
+			"name":"O",
+			"sql":"lower(artist) LIKE 'o%' OR artist LIKE 'Ｏ%' OR artist LIKE 'ｏ%'"
+		},
+		{
+			"name":"P",
+			"sql":"lower(artist) LIKE 'p%' OR artist LIKE 'Ｐ%' OR artist LIKE 'ｐ%'"
+		},
+		{
+			"name":"Q",
+			"sql":"lower(artist) LIKE 'q%' OR artist LIKE 'Ｑ%' OR artist LIKE 'ｑ%'"
+		},
+		{
+			"name":"R",
+			"sql":"lower(artist) LIKE 'r%' OR artist LIKE 'Ｒ%' OR artist LIKE 'ｒ%'"
+		},
+		{
+			"name":"S",
+			"sql":"lower(artist) LIKE 's%' OR artist LIKE 'Ｓ%' OR artist LIKE 'ｓ%'"
+		},
+		{
+			"name":"T",
+			"sql":"lower(artist) LIKE 't%' OR artist LIKE 'Ｔ%' OR artist LIKE 'ｔ%'"
+		},
+		{
+			"name":"U",
+			"sql":"lower(artist) LIKE 'u%' OR artist LIKE 'Ｕ%' OR artist LIKE 'ｕ%'"
+		},
+		{
+			"name":"V",
+			"sql":"lower(artist) LIKE 'v%' OR artist LIKE 'Ｖ%' OR artist LIKE 'ｖ%'"
+		},
+		{
+			"name":"W",
+			"sql":"lower(artist) LIKE 'w%' OR artist LIKE 'Ｗ%' OR artist LIKE 'ｗ%'"
+		},
+		{
+			"name":"X",
+			"sql":"lower(artist) LIKE 'x%' OR artist LIKE 'Ｘ%' OR artist LIKE 'ｘ%'"
+		},
+		{
+			"name":"Y",
+			"sql":"lower(artist) LIKE 'y%' OR artist LIKE 'Ｙ%' OR artist LIKE 'ｙ%'"
+		},
+		{
+			"name":"Z",
+			"sql":"lower(artist) LIKE 'z%' OR artist LIKE 'Ｚ%' OR artist LIKE 'ｚ%'"
+		},
+		{
+			"name":"0 - 9",
+			"sql":"artist BETWEEN '0' AND ':' OR artist BETWEEN '０' AND '９' OR artist LIKE '９%'"
+		},
+		{
+			"name":"あ行",
+			"sql":"artist BETWEEN 'ぁ' AND 'か' OR artist BETWEEN 'ァ' AND 'カ' OR artist BETWEEN 'ヴ' AND 'ヵ'" 
+		},
+		{
+			"name":"か行",
+			"sql":"artist BETWEEN 'か' AND 'さ' OR artist BETWEEN 'カ' AND 'サ' OR artist BETWEEN 'ヵ' AND 'ヶ' OR artist LIKE 'ヶ%'" 
+		},
+		{
+			"name":"さ行",
+			"sql":"artist BETWEEN 'さ' AND 'た' OR artist BETWEEN 'サ' AND 'タ'" 
+		},
+		{
+			"name":"た行",
+			"sql":"artist BETWEEN 'た' AND 'な' OR artist BETWEEN 'タ' AND 'ナ'" 
+		},
+		{
+			"name":"な行",
+			"sql":"artist BETWEEN 'な' AND 'は' OR artist BETWEEN 'ナ' AND 'ハ'" 
+		},
+		{
+			"name":"は行",
+			"sql":"artist BETWEEN 'は' AND 'ま' OR artist BETWEEN 'ハ' AND 'マ'" 
+		},
+		{
+			"name":"ま行",
+			"sql":"artist BETWEEN 'ま' AND 'ゃ' OR artist BETWEEN 'マ' AND 'ャ'" 
+		},
+		{
+			"name":"や行",
+			"sql":"artist BETWEEN 'ゃ' AND 'ら' OR artist BETWEEN 'ャ' AND 'ラ'" 
+		},
+		{
+			"name":"ら行",
+			"sql":"artist BETWEEN 'ら' AND 'わ' OR artist BETWEEN 'ラ' AND 'ワ'" 
+		},
+		{
+			"name":"わ行",
+			"sql":"artist BETWEEN 'わ' AND 'ん' OR artist LIKE 'ん%' OR artist BETWEEN 'ワ' AND 'ヴ'" 
+		},
+		{
+			"name":"記号・漢字・その他",
+			"sql":"lower(artist) NOT BETWEEN 'a' AND '{' AND artist NOT BETWEEN 'Ａ' AND 'Ｚ' AND artist NOT LIKE 'Ｚ%' AND artist NOT BETWEEN 'ａ' AND 'ｚ' AND artist NOT LIKE 'ｚ%' AND artist NOT BETWEEN '0' AND ':' AND artist NOT BETWEEN '0' AND ':' AND artist NOT BETWEEN '０' AND '９' AND artist NOT LIKE '９%' AND artist NOT BETWEEN 'ぁ' AND 'ん' AND artist NOT BETWEEN 'ァ' AND 'ヶ' AND artist NOT LIKE 'ん%' AND artist NOT LIKE 'ヶ%'" 
+		}
+	]
+},
+
+{
+	"name":"BPM",
+	"folder":[
+		{
+			"name":"50未満",
+			"sql":"maxbpm < 50"
+		},
+		{
+			"name":"50 - 59",
+			"sql":"maxbpm >= 50 AND maxbpm < 60"
+		},
+		{
+			"name":"60 - 69",
+			"sql":"maxbpm >= 60 AND maxbpm < 70"
+		},
+		{
+			"name":"70 - 79",
+			"sql":"maxbpm >= 70 AND maxbpm < 80"
+		},
+		{
+			"name":"80 - 89",
+			"sql":"maxbpm >= 80 AND maxbpm < 90"
+		},
+		{
+			"name":"90 - 99",
+			"sql":"maxbpm >= 90 AND maxbpm < 100"
+		},
+		{
+			"name":"100 - 109",
+			"sql":"maxbpm >= 100 AND maxbpm < 110"
+		},
+		{
+			"name":"110 - 119",
+			"sql":"maxbpm >= 110 AND maxbpm < 120"
+		},
+		{
+			"name":"120 - 124",
+			"sql":"maxbpm >= 120 AND maxbpm < 125"
+		},
+		{
+			"name":"125 - 129",
+			"sql":"maxbpm >= 125 AND maxbpm < 130"
+		},
+		{
+			"name":"130 - 134",
+			"sql":"maxbpm >= 130 AND maxbpm < 135"
+		},
+		{
+			"name":"135 - 139",
+			"sql":"maxbpm >= 135 AND maxbpm < 140"
+		},
+		{
+			"name":"140 - 144",
+			"sql":"maxbpm >= 140 AND maxbpm < 145"
+		},
+		{
+			"name":"145 - 149",
+			"sql":"maxbpm >= 145 AND maxbpm < 150"
+		},
+		{
+			"name":"150 - 154",
+			"sql":"maxbpm >= 150 AND maxbpm < 155"
+		},
+		{
+			"name":"155 - 159",
+			"sql":"maxbpm >= 155 AND maxbpm < 160"
+		},
+		{
+			"name":"160 - 164",
+			"sql":"maxbpm >= 160 AND maxbpm < 165"
+		},
+		{
+			"name":"165 - 169",
+			"sql":"maxbpm >= 165 AND maxbpm < 170"
+		},
+		{
+			"name":"170 - 174",
+			"sql":"maxbpm >= 170 AND maxbpm < 175"
+		},
+		{
+			"name":"175 - 179",
+			"sql":"maxbpm >= 175 AND maxbpm < 180"
+		},
+		{
+			"name":"180 - 184",
+			"sql":"maxbpm >= 180 AND maxbpm < 185"
+		},
+		{
+			"name":"185 - 189",
+			"sql":"maxbpm >= 185 AND maxbpm < 190"
+		},
+		{
+			"name":"190 - 194",
+			"sql":"maxbpm >= 190 AND maxbpm < 195"
+		},
+		{
+			"name":"195 - 199",
+			"sql":"maxbpm >= 195 AND maxbpm < 200"
+		},
+		{
+			"name":"200 - 219",
+			"sql":"maxbpm >= 200 AND maxbpm < 220"
+		},
+		{
+			"name":"220 - 239",
+			"sql":"maxbpm >= 220 AND maxbpm < 240"
+		},
+		{
+			"name":"240 - 259",
+			"sql":"maxbpm >= 240 AND maxbpm < 260"
+		},
+		{
+			"name":"260 - 279",
+			"sql":"maxbpm >= 260 AND maxbpm < 280"
+		},
+		{
+			"name":"280 - 299",
+			"sql":"maxbpm >= 280 AND maxbpm < 300"
+		},
+		{
+			"name":"300 - 399",
+			"sql":"maxbpm >= 300 AND maxbpm < 400"
+		},
+		{
+			"name":"400 - 499",
+			"sql":"maxbpm >= 400 AND maxbpm < 500"
+		},
+		{
+			"name":"500以上",
+			"sql":"maxbpm >= 500"
+		}
+	]
+},
+
+{
+	"name":"ノート数",
+	"folder":[
+		{
+			"name":"100未満",
+			"sql":"song.notes < 100"
+		},
+		{
+			"name":"100 - 199",
+			"sql":"song.notes >= 100 AND song.notes < 200"
+		},
+		{
+			"name":"200 - 299",
+			"sql":"song.notes >= 200 AND song.notes < 300"
+		},
+		{
+			"name":"300 - 399",
+			"sql":"song.notes >= 300 AND song.notes < 400"
+		},
+		{
+			"name":"400 - 499",
+			"sql":"song.notes >= 400 AND song.notes < 500"
+		},
+		{
+			"name":"500 - 599",
+			"sql":"song.notes >= 500 AND song.notes < 600"
+		},
+		{
+			"name":"600 - 699",
+			"sql":"song.notes >= 600 AND song.notes < 700"
+		},
+		{
+			"name":"700 - 799",
+			"sql":"song.notes >= 700 AND song.notes < 800"
+		},
+		{
+			"name":"800 - 899",
+			"sql":"song.notes >= 800 AND song.notes < 900"
+		},
+		{
+			"name":"900 - 999",
+			"sql":"song.notes >= 900 AND song.notes < 1000"
+		},
+		{
+			"name":"1000 - 1099",
+			"sql":"song.notes >= 1000 AND song.notes < 1100"
+		},
+		{
+			"name":"1100 - 1199",
+			"sql":"song.notes >= 1100 AND song.notes < 1200"
+		},
+		{
+			"name":"1200 - 1299",
+			"sql":"song.notes >= 1200 AND song.notes < 1300"
+		},
+		{
+			"name":"1300 - 1399",
+			"sql":"song.notes >= 1300 AND song.notes < 1400"
+		},
+		{
+			"name":"1400 - 1499",
+			"sql":"song.notes >= 1400 AND song.notes < 1500"
+		},
+		{
+			"name":"1500 - 1599",
+			"sql":"song.notes >= 1500 AND song.notes < 1600"
+		},
+		{
+			"name":"1600 - 1699",
+			"sql":"song.notes >= 1600 AND song.notes < 1700"
+		},
+		{
+			"name":"1700 - 1799",
+			"sql":"song.notes >= 1700 AND song.notes < 1800"
+		},
+		{
+			"name":"1800 - 1899",
+			"sql":"song.notes >= 1800 AND song.notes < 1900"
+		},
+		{
+			"name":"1900 - 1999",
+			"sql":"song.notes >= 1900 AND song.notes < 2000"
+		},
+		{
+			"name":"2000 - 2099",
+			"sql":"song.notes >= 2000 AND song.notes < 2100"
+		},
+		{
+			"name":"2100 - 2199",
+			"sql":"song.notes >= 2100 AND song.notes < 2200"
+		},
+		{
+			"name":"2200 - 2299",
+			"sql":"song.notes >= 2200 AND song.notes < 2300"
+		},
+		{
+			"name":"2300 - 2399",
+			"sql":"song.notes >= 2300 AND song.notes < 2400"
+		},
+		{
+			"name":"2400 - 2499",
+			"sql":"song.notes >= 2400 AND song.notes < 2500"
+		},
+		{
+			"name":"2500 - 2599",
+			"sql":"song.notes >= 2500 AND song.notes < 2600"
+		},
+		{
+			"name":"2600 - 2699",
+			"sql":"song.notes >= 2600 AND song.notes < 2700"
+		},
+		{
+			"name":"2700 - 2799",
+			"sql":"song.notes >= 2700 AND song.notes < 2800"
+		},
+		{
+			"name":"2800 - 2899",
+			"sql":"song.notes >= 2800 AND song.notes < 2900"
+		},
+		{
+			"name":"2900 - 2999",
+			"sql":"song.notes >= 2900 AND song.notes < 3000"
+		},
+		{
+			"name":"3000以上",
+			"sql":"song.notes >= 3000"
+		}
+	]
+},
+
+{
+	"name":"演奏時間",
+	"folder":[
+		{
+			"name":"1:00未満",
+			"sql":"length < 60000"
+		},
+		{
+			"name":"1:00 - 1:09",
+			"sql":"length >= 60000 AND length < 70000"
+		},
+		{
+			"name":"1:10 - 1:19",
+			"sql":"length >= 70000 AND length < 80000"
+		},
+		{
+			"name":"1:20 - 1:29",
+			"sql":"length >= 80000 AND length < 90000"
+		},
+		{
+			"name":"1:30 - 1:34",
+			"sql":"length >= 90000 AND length < 95000"
+		},
+		{
+			"name":"1:35 - 1:39",
+			"sql":"length >= 95000 AND length < 100000"
+		},
+		{
+			"name":"1:40 - 1:49",
+			"sql":"length >= 100000 AND length < 110000"
+		},
+		{
+			"name":"1:50 - 1:54",
+			"sql":"length >= 110000 AND length < 115000"
+		},
+		{
+			"name":"1:55 - 1:59",
+			"sql":"length >= 115000 AND length < 120000"
+		},
+		{
+			"name":"2:00 - 2:04",
+			"sql":"length >= 120000 AND length < 125000"
+		},
+		{
+			"name":"2:05 - 2:09",
+			"sql":"length >= 125000 AND length < 130000"
+		},
+		{
+			"name":"2:10 - 2:14",
+			"sql":"length >= 130000 AND length < 135000"
+		},
+		{
+			"name":"2:15 - 2:19",
+			"sql":"length >= 135000 AND length < 140000"
+		},
+		{
+			"name":"2:20 - 2:24",
+			"sql":"length >= 140000 AND length < 145000"
+		},
+		{
+			"name":"2:25 - 2:29",
+			"sql":"length >= 145000 AND length < 150000"
+		},
+		{
+			"name":"2:30 - 2:34",
+			"sql":"length >= 150000 AND length < 155000"
+		},
+		{
+			"name":"2:35 - 2:39",
+			"sql":"length >= 155000 AND length < 160000"
+		},
+		{
+			"name":"2:40 - 2:44",
+			"sql":"length >= 160000 AND length < 165000"
+		},
+		{
+			"name":"2:45 - 2:49",
+			"sql":"length >= 165000 AND length < 170000"
+		},
+		{
+			"name":"2:50 - 2:54",
+			"sql":"length >= 170000 AND length < 175000"
+		},
+		{
+			"name":"2:55 - 2:59",
+			"sql":"length >= 175000 AND length < 180000"
+		},
+		{
+			"name":"3:00 - 3:29",
+			"sql":"length >= 180000 AND length < 210000"
+		},
+		{
+			"name":"3:30 - 3:59",
+			"sql":"length >= 210000 AND length < 240000"
+		},
+		{
+			"name":"4:00 - 4:59",
+			"sql":"length >= 240000 AND length < 300000"
+		},
+		{
+			"name":"5:00 - 6:59",
+			"sql":"length >= 300000 AND length < 420000"
+		},
+		{
+			"name":"7:00 - 9:59",
+			"sql":"length >= 420000 AND length < 600000"
+		},
+		{
+			"name":"10:00以上",
+			"sql":"length > 600000"
+		}
+	]
+},
+
+{
+	"name":"年代",
+	"folder":[
+		{
+			"name":"????",
+			"sql":"song.date < 883580400"
+		},
+		{
+			"name":"1998年",
+			"sql":"song.date >= 883580400 AND song.date < 915116400"
+		},
+		{
+			"name":"1999年",
+			"sql":"song.date >= 915116400 AND song.date < 946652400"
+		},
+		{
+			"name":"2000年",
+			"sql":"song.date >= 946652400 AND song.date < 978274800"
+		},
+		{
+			"name":"2001年",
+			"sql":"song.date >= 978274800 AND song.date < 1009810800"
+		},
+		{
+			"name":"2002年",
+			"sql":"song.date >= 1009810800 AND song.date < 1041346800"
+		},
+		{
+			"name":"2003年",
+			"sql":"song.date >= 1041346800 AND song.date < 1072882800"
+		},
+		{
+			"name":"2004年",
+			"sql":"song.date >= 1072882800 AND song.date < 1104505200"
+		},
+		{
+			"name":"2005年",
+			"sql":"song.date >= 1104505200 AND song.date < 1136041200"
+		},
+		{
+			"name":"2006年",
+			"sql":"song.date >= 1136041200 AND song.date < 1167577200"
+		},
+		{
+			"name":"2007年",
+			"sql":"song.date >= 1167577200 AND song.date < 1199113200"
+		},
+		{
+			"name":"2008年",
+			"sql":"song.date >= 1199113200 AND song.date < 1230735600"
+		},
+		{
+			"name":"2009年",
+			"sql":"song.date >= 1230735600 AND song.date < 1262271600"
+		},
+		{
+			"name":"2010年",
+			"sql":"song.date >= 1262271600 AND song.date < 1293807600"
+		},
+		{
+			"name":"2011年",
+			"sql":"song.date >= 1293807600 AND song.date < 1325343600"
+		},
+		{
+			"name":"2012年",
+			"sql":"song.date >= 1325343600 AND song.date < 1356966000"
+		},
+		{
+			"name":"2013年",
+			"sql":"song.date >= 1356966000 AND song.date < 1388502000"
+		},
+		{
+			"name":"2014年",
+			"sql":"song.date >= 1388502000 AND song.date < 1420038000"
+		},
+		{
+			"name":"2015年",
+			"sql":"song.date >= 1420038000 AND song.date < 1451574000"
+		},
+		{
+			"name":"2016年",
+			"sql":"song.date >= 1451574000 AND song.date < 1483196400"
+		},
+		{
+			"name":"2017年",
+			"sql":"song.date >= 1483196400 AND song.date < 1514732400"
+		},
+		{
+			"name":"2018年",
+			"sql":"song.date >= 1514732400 AND song.date < 1546268400"
+		},
+		{
+			"name":"2019年",
+			"sql":"song.date >= 1546268400 AND song.date < 1577804400"
+		},
+		{
+			"name":"2020年",
+			"sql":"song.date >= 1577804400 AND song.date < 1609426800"
+		},
+		{
+			"name":"2021年",
+			"sql":"song.date >= 1609426800 AND song.date < 1640962800"
+		},
+		{
+			"name":"2022年",
+			"sql":"song.date >= 1640962800 AND song.date < 1672498800"
+		}
+	]
+},
+
+{
+	"name":"プレイ状況",
+	"folder":[
+		{
+			"name":"MAX",
+			"sql":"score.clear = 10"
+		},
+		{
+			"name":"PERFECT",
+			"sql":"score.clear = 9"
+		},
+		{
+			"name":"FULL COMBO",
+			"sql":"score.clear = 8"
+		},
+		{
+			"name":"EX-HARD CLEAR",
 			"sql":"score.clear = 7"
 		},
 		{
@@ -58,611 +870,611 @@
 },
 
 {
-	"name":"SCORE RANK",
+	"name":"プレイランク",
 	"folder":[
 		{
 			"name":"RANK AAA",
-			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes >= 88.88"
+			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes >= 88.88"
 		},
 		{
 			"name":"RANK AA",
-			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes >= 77.77 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes < 88.88"
+			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes >= 77.77 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes < 88.88"
 		},
 		{
 			"name":"RANK A",
-			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes >= 66.66 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes < 77.77"
+			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes >= 66.66 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes < 77.77"
 		},
 		{
 			"name":"RANK B",
-			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes >= 55.55 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes < 66.66"
+			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes >= 55.55 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes < 66.66"
 		},
 		{
 			"name":"RANK C",
-			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes >= 44.44 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes < 55.55"
+			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes >= 44.44 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes < 55.55"
 		},
 		{
 			"name":"RANK D",
-			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes >= 33.33 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes < 44.44"
+			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes >= 33.33 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes < 44.44"
 		},
 		{
 			"name":"RANK E",
-			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes >= 22.22 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.notes < 33.33"
+			"sql":"(lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes >= 22.22 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes < 33.33"
+		},
+		{
+			"name":"RANK F",
+			"sql":"playcount > 0 AND (lpg * 2 + epg * 2 + lgr + egr) * 50 / score.song.notes < 22.22"
 		}
 	]
 },
 
 {
-	"name":"DENSITY",
+	"name":"譜面密度",
 	"folder":[
 		{
-			"name": "AVERAGE",
+			"name": "平均密度(AVERAGE)",
 			"folder":[
 				{
-					"name": "DENSITY 〜3",
+					"name": "DENSITY 3未満",
 					"sql": "density < 3"
 				},
 				{
-					"name": "DENSITY 3〜5",
+					"name": "DENSITY 3 - 5",
 					"sql": "density >= 3 AND density < 5"
 				},
 				{
-					"name": "DENSITY 5〜7",
+					"name": "DENSITY 5 - 7",
 					"sql": "density >= 5 AND density < 7"
 				},
 				{
-					"name": "DENSITY 7〜9",
+					"name": "DENSITY 7 - 9",
 					"sql": "density >= 7 AND density < 9"
 				},
 				{
-					"name": "DENSITY 9〜10",
+					"name": "DENSITY 9 - 10",
 					"sql": "density >= 9 AND density < 10"
 				},
 				{
-					"name": "DENSITY 10〜11",
+					"name": "DENSITY 10 - 11",
 					"sql": "density >= 10 AND density < 11"
 				},
 				{
-					"name": "DENSITY 11〜12",
+					"name": "DENSITY 11 - 12",
 					"sql": "density >= 11 AND density < 12"
 				},
 				{
-					"name": "DENSITY 12〜13",
+					"name": "DENSITY 12 - 13",
 					"sql": "density >= 12 AND density < 13"
 				},
 				{
-					"name": "DENSITY 13〜14",
+					"name": "DENSITY 13 - 14",
 					"sql": "density >= 13 AND density < 14"
 				},
 				{
-					"name": "DENSITY 14〜15",
+					"name": "DENSITY 14 - 15",
 					"sql": "density >= 14 AND density < 15"
 				},
 				{
-					"name": "DENSITY 15〜16",
+					"name": "DENSITY 15 - 16",
 					"sql": "density >= 15 AND density < 16"
 				},
 				{
-					"name": "DENSITY 16〜17",
+					"name": "DENSITY 16 - 17",
 					"sql": "density >= 16 AND density < 17"
 				},
 				{
-					"name": "DENSITY 17〜18",
+					"name": "DENSITY 17 - 18",
 					"sql": "density >= 17 AND density < 18"
 				},
 				{
-					"name": "DENSITY 18〜19",
+					"name": "DENSITY 18 - 19",
 					"sql": "density >= 18 AND density < 19"
 				},
 				{
-					"name": "DENSITY 19〜20",
+					"name": "DENSITY 19 - 20",
 					"sql": "density >= 19 AND density < 20"
 				},
 				{
-					"name": "DENSITY 20〜21",
+					"name": "DENSITY 20 - 21",
 					"sql": "density >= 20 AND density < 21"
 				},
 				{
-					"name": "DENSITY 21〜22",
+					"name": "DENSITY 21 - 22",
 					"sql": "density >= 21 AND density < 22"
 				},
 				{
-					"name": "DENSITY 22〜23",
+					"name": "DENSITY 22 - 23",
 					"sql": "density >= 22 AND density < 23"
 				},
 				{
-					"name": "DENSITY 23〜24",
+					"name": "DENSITY 23 - 24",
 					"sql": "density >= 23 AND density < 24"
 				},
 				{
-					"name": "DENSITY 24〜25",
+					"name": "DENSITY 24 - 25",
 					"sql": "density >= 24 AND density < 25"
 				},
 				{
-					"name": "DENSITY 25〜26",
+					"name": "DENSITY 25 - 26",
 					"sql": "density >= 25 AND density < 26"
 				},
 				{
-					"name": "DENSITY 26〜27",
+					"name": "DENSITY 26 - 27",
 					"sql": "density >= 26 AND density < 27"
 				},
 				{
-					"name": "DENSITY 27〜28",
+					"name": "DENSITY 27 - 28",
 					"sql": "density >= 27 AND density < 28"
 				},
 				{
-					"name": "DENSITY 28〜29",
+					"name": "DENSITY 28 - 29",
 					"sql": "density >= 28 AND density < 29"
 				},
 				{
-					"name": "DENSITY 29〜30",
+					"name": "DENSITY 29 - 30",
 					"sql": "density >= 29 AND density < 30"
 				},
-
 				{
-					"name": "DENSITY 30〜31",
+					"name": "DENSITY 30 - 31",
 					"sql": "density >= 30 AND density < 31"
 				},
 				{
-					"name": "DENSITY 31〜32",
+					"name": "DENSITY 31 - 32",
 					"sql": "density >= 31 AND density < 32"
 				},
 				{
-					"name": "DENSITY 32〜33",
+					"name": "DENSITY 32 - 33",
 					"sql": "density >= 32 AND density < 33"
 				},
 				{
-					"name": "DENSITY 33〜34",
+					"name": "DENSITY 33 - 34",
 					"sql": "density >= 33 AND density < 34"
 				},
 				{
-					"name": "DENSITY 34〜35",
+					"name": "DENSITY 34 - 35",
 					"sql": "density >= 34 AND density < 35"
 				},
 				{
-					"name": "DENSITY 35〜36",
+					"name": "DENSITY 35 - 36",
 					"sql": "density >= 35 AND density < 36"
 				},
 				{
-					"name": "DENSITY 36〜37",
+					"name": "DENSITY 36 - 37",
 					"sql": "density >= 36 AND density < 37"
 				},
 				{
-					"name": "DENSITY 37〜38",
+					"name": "DENSITY 37 - 38",
 					"sql": "density >= 37 AND density < 38"
 				},
 				{
-					"name": "DENSITY 38〜39",
+					"name": "DENSITY 38 - 39",
 					"sql": "density >= 38 AND density < 39"
 				},
 				{
-					"name": "DENSITY 39〜40",
+					"name": "DENSITY 39 - 40",
 					"sql": "density >= 39 AND density < 40"
 				},
-
 				{
-					"name": "DENSITY 40〜41",
+					"name": "DENSITY 40 - 41",
 					"sql": "density >= 40 AND density < 41"
 				},
 				{
-					"name": "DENSITY 41〜42",
+					"name": "DENSITY 41 - 42",
 					"sql": "density >= 41 AND density < 42"
 				},
 				{
-					"name": "DENSITY 42〜43",
+					"name": "DENSITY 42 - 43",
 					"sql": "density >= 42 AND density < 43"
 				},
 				{
-					"name": "DENSITY 43〜44",
+					"name": "DENSITY 43 - 44",
 					"sql": "density >= 43 AND density < 44"
 				},
 				{
-					"name": "DENSITY 44〜45",
+					"name": "DENSITY 44 - 45",
 					"sql": "density >= 44 AND density < 45"
 				},
 				{
-					"name": "DENSITY 45〜46",
+					"name": "DENSITY 45 - 46",
 					"sql": "density >= 45 AND density < 46"
 				},
 				{
-					"name": "DENSITY 46〜47",
+					"name": "DENSITY 46 - 47",
 					"sql": "density >= 46 AND density < 47"
 				},
 				{
-					"name": "DENSITY 47〜48",
+					"name": "DENSITY 47 - 48",
 					"sql": "density >= 47 AND density < 48"
 				},
 				{
-					"name": "DENSITY 48〜49",
+					"name": "DENSITY 48 - 49",
 					"sql": "density >= 48 AND density < 49"
 				},
 				{
-					"name": "DENSITY 49〜50",
+					"name": "DENSITY 49 - 50",
 					"sql": "density >= 49 AND density < 50"
 				},
 				{
-					"name": "DENSITY 50〜",
+					"name": "DENSITY 50以上",
 					"sql": "density >= 50"
 				}
 			]
 		},
 		{
-			"name": "PEAK",
+			"name": "瞬間密度(PEAK)",
 			"folder":[
 				{
-					"name": "DENSITY 〜3",
+					"name": "DENSITY 3未満",
 					"sql": "peakdensity < 3"
 				},
 				{
-					"name": "DENSITY 3〜5",
+					"name": "DENSITY 3 - 5",
 					"sql": "peakdensity >= 3 AND peakdensity < 5"
 				},
 				{
-					"name": "DENSITY 5〜7",
+					"name": "DENSITY 5 - 7",
 					"sql": "peakdensity >= 5 AND peakdensity < 7"
 				},
 				{
-					"name": "DENSITY 7〜9",
+					"name": "DENSITY 7 - 9",
 					"sql": "peakdensity >= 7 AND peakdensity < 9"
 				},
 				{
-					"name": "DENSITY 9〜10",
+					"name": "DENSITY 9 - 10",
 					"sql": "peakdensity >= 9 AND peakdensity < 10"
 				},
 				{
-					"name": "DENSITY 10〜11",
+					"name": "DENSITY 10 - 11",
 					"sql": "peakdensity >= 10 AND peakdensity < 11"
 				},
 				{
-					"name": "DENSITY 11〜12",
+					"name": "DENSITY 11 - 12",
 					"sql": "peakdensity >= 11 AND peakdensity < 12"
 				},
 				{
-					"name": "DENSITY 12〜13",
+					"name": "DENSITY 12 - 13",
 					"sql": "peakdensity >= 12 AND peakdensity < 13"
 				},
 				{
-					"name": "DENSITY 13〜14",
+					"name": "DENSITY 13 - 14",
 					"sql": "peakdensity >= 13 AND peakdensity < 14"
 				},
 				{
-					"name": "DENSITY 14〜15",
+					"name": "DENSITY 14 - 15",
 					"sql": "peakdensity >= 14 AND peakdensity < 15"
 				},
 				{
-					"name": "DENSITY 15〜16",
+					"name": "DENSITY 15 - 16",
 					"sql": "peakdensity >= 15 AND peakdensity < 16"
 				},
 				{
-					"name": "DENSITY 16〜17",
+					"name": "DENSITY 16 - 17",
 					"sql": "peakdensity >= 16 AND peakdensity < 17"
 				},
 				{
-					"name": "DENSITY 17〜18",
+					"name": "DENSITY 17 - 18",
 					"sql": "peakdensity >= 17 AND peakdensity < 18"
 				},
 				{
-					"name": "DENSITY 18〜19",
+					"name": "DENSITY 18 - 19",
 					"sql": "peakdensity >= 18 AND peakdensity < 19"
 				},
 				{
-					"name": "DENSITY 19〜20",
+					"name": "DENSITY 19 - 20",
 					"sql": "peakdensity >= 19 AND peakdensity < 20"
 				},
 				{
-					"name": "DENSITY 20〜21",
+					"name": "DENSITY 20 - 21",
 					"sql": "peakdensity >= 20 AND peakdensity < 21"
 				},
 				{
-					"name": "DENSITY 21〜22",
+					"name": "DENSITY 21 - 22",
 					"sql": "peakdensity >= 21 AND peakdensity < 22"
 				},
 				{
-					"name": "DENSITY 22〜23",
+					"name": "DENSITY 22 - 23",
 					"sql": "peakdensity >= 22 AND peakdensity < 23"
 				},
 				{
-					"name": "DENSITY 23〜24",
+					"name": "DENSITY 23 - 24",
 					"sql": "peakdensity >= 23 AND peakdensity < 24"
 				},
 				{
-					"name": "DENSITY 24〜25",
+					"name": "DENSITY 24 - 25",
 					"sql": "peakdensity >= 24 AND peakdensity < 25"
 				},
 				{
-					"name": "DENSITY 25〜26",
+					"name": "DENSITY 25 - 26",
 					"sql": "peakdensity >= 25 AND peakdensity < 26"
 				},
 				{
-					"name": "DENSITY 26〜27",
+					"name": "DENSITY 26 - 27",
 					"sql": "peakdensity >= 26 AND peakdensity < 27"
 				},
 				{
-					"name": "DENSITY 27〜28",
+					"name": "DENSITY 27 - 28",
 					"sql": "peakdensity >= 27 AND peakdensity < 28"
 				},
 				{
-					"name": "DENSITY 28〜29",
+					"name": "DENSITY 28 - 29",
 					"sql": "peakdensity >= 28 AND peakdensity < 29"
 				},
 				{
-					"name": "DENSITY 29〜30",
+					"name": "DENSITY 29 - 30",
 					"sql": "peakdensity >= 29 AND peakdensity < 30"
 				},
 
 				{
-					"name": "DENSITY 30〜31",
+					"name": "DENSITY 30 - 31",
 					"sql": "peakdensity >= 30 AND peakdensity < 31"
 				},
 				{
-					"name": "DENSITY 31〜32",
+					"name": "DENSITY 31 - 32",
 					"sql": "peakdensity >= 31 AND peakdensity < 32"
 				},
 				{
-					"name": "DENSITY 32〜33",
+					"name": "DENSITY 32 - 33",
 					"sql": "peakdensity >= 32 AND peakdensity < 33"
 				},
 				{
-					"name": "DENSITY 33〜34",
+					"name": "DENSITY 33 - 34",
 					"sql": "peakdensity >= 33 AND peakdensity < 34"
 				},
 				{
-					"name": "DENSITY 34〜35",
+					"name": "DENSITY 34 - 35",
 					"sql": "peakdensity >= 34 AND peakdensity < 35"
 				},
 				{
-					"name": "DENSITY 35〜36",
+					"name": "DENSITY 35 - 36",
 					"sql": "peakdensity >= 35 AND peakdensity < 36"
 				},
 				{
-					"name": "DENSITY 36〜37",
+					"name": "DENSITY 36 - 37",
 					"sql": "peakdensity >= 36 AND peakdensity < 37"
 				},
 				{
-					"name": "DENSITY 37〜38",
+					"name": "DENSITY 37 - 38",
 					"sql": "peakdensity >= 37 AND peakdensity < 38"
 				},
 				{
-					"name": "DENSITY 38〜39",
+					"name": "DENSITY 38 - 39",
 					"sql": "peakdensity >= 38 AND peakdensity < 39"
 				},
 				{
-					"name": "DENSITY 39〜40",
+					"name": "DENSITY 39 - 40",
 					"sql": "peakdensity >= 39 AND peakdensity < 40"
 				},
 
 				{
-					"name": "DENSITY 40〜41",
+					"name": "DENSITY 40 - 41",
 					"sql": "peakdensity >= 40 AND peakdensity < 41"
 				},
 				{
-					"name": "DENSITY 41〜42",
+					"name": "DENSITY 41 - 42",
 					"sql": "peakdensity >= 41 AND peakdensity < 42"
 				},
 				{
-					"name": "DENSITY 42〜43",
+					"name": "DENSITY 42 - 43",
 					"sql": "peakdensity >= 42 AND peakdensity < 43"
 				},
 				{
-					"name": "DENSITY 43〜44",
+					"name": "DENSITY 43 - 44",
 					"sql": "peakdensity >= 43 AND peakdensity < 44"
 				},
 				{
-					"name": "DENSITY 44〜45",
+					"name": "DENSITY 44 - 45",
 					"sql": "peakdensity >= 44 AND peakdensity < 45"
 				},
 				{
-					"name": "DENSITY 45〜46",
+					"name": "DENSITY 45 - 46",
 					"sql": "peakdensity >= 45 AND peakdensity < 46"
 				},
 				{
-					"name": "DENSITY 46〜47",
+					"name": "DENSITY 46 - 47",
 					"sql": "peakdensity >= 46 AND peakdensity < 47"
 				},
 				{
-					"name": "DENSITY 47〜48",
+					"name": "DENSITY 47 - 48",
 					"sql": "peakdensity >= 47 AND peakdensity < 48"
 				},
 				{
-					"name": "DENSITY 48〜49",
+					"name": "DENSITY 48 - 49",
 					"sql": "peakdensity >= 48 AND peakdensity < 49"
 				},
 				{
-					"name": "DENSITY 49〜50",
+					"name": "DENSITY 49 - 50",
 					"sql": "peakdensity >= 49 AND peakdensity < 50"
 				},
 				{
-					"name": "DENSITY 50〜",
+					"name": "DENSITY 50以上",
 					"sql": "peakdensity >= 50"
 				}
 			]
 		},
 		{
-			"name": "END",
+			"name": "終盤密度(END)",
 			"folder":[
 				{
-					"name": "DENSITY 〜3",
+					"name": "DENSITY 3未満",
 					"sql": "enddensity < 3"
 				},
 				{
-					"name": "DENSITY 3〜5",
+					"name": "DENSITY 3 - 5",
 					"sql": "enddensity >= 3 AND enddensity < 5"
 				},
 				{
-					"name": "DENSITY 5〜7",
+					"name": "DENSITY 5 - 7",
 					"sql": "enddensity >= 5 AND enddensity < 7"
 				},
 				{
-					"name": "DENSITY 7〜9",
+					"name": "DENSITY 7 - 9",
 					"sql": "enddensity >= 7 AND enddensity < 9"
 				},
 				{
-					"name": "DENSITY 9〜10",
+					"name": "DENSITY 9 - 10",
 					"sql": "enddensity >= 9 AND enddensity < 10"
 				},
 				{
-					"name": "DENSITY 10〜11",
+					"name": "DENSITY 10 - 11",
 					"sql": "enddensity >= 10 AND enddensity < 11"
 				},
 				{
-					"name": "DENSITY 11〜12",
+					"name": "DENSITY 11 - 12",
 					"sql": "enddensity >= 11 AND enddensity < 12"
 				},
 				{
-					"name": "DENSITY 12〜13",
+					"name": "DENSITY 12 - 13",
 					"sql": "enddensity >= 12 AND enddensity < 13"
 				},
 				{
-					"name": "DENSITY 13〜14",
+					"name": "DENSITY 13 - 14",
 					"sql": "enddensity >= 13 AND enddensity < 14"
 				},
 				{
-					"name": "DENSITY 14〜15",
+					"name": "DENSITY 14 - 15",
 					"sql": "enddensity >= 14 AND enddensity < 15"
 				},
 				{
-					"name": "DENSITY 15〜16",
+					"name": "DENSITY 15 - 16",
 					"sql": "enddensity >= 15 AND enddensity < 16"
 				},
 				{
-					"name": "DENSITY 16〜17",
+					"name": "DENSITY 16 - 17",
 					"sql": "enddensity >= 16 AND enddensity < 17"
 				},
 				{
-					"name": "DENSITY 17〜18",
+					"name": "DENSITY 17 - 18",
 					"sql": "enddensity >= 17 AND enddensity < 18"
 				},
 				{
-					"name": "DENSITY 18〜19",
+					"name": "DENSITY 18 - 19",
 					"sql": "enddensity >= 18 AND enddensity < 19"
 				},
 				{
-					"name": "DENSITY 19〜20",
+					"name": "DENSITY 19 - 20",
 					"sql": "enddensity >= 19 AND enddensity < 20"
 				},
 				{
-					"name": "DENSITY 20〜21",
+					"name": "DENSITY 20 - 21",
 					"sql": "enddensity >= 20 AND enddensity < 21"
 				},
 				{
-					"name": "DENSITY 21〜22",
+					"name": "DENSITY 21 - 22",
 					"sql": "enddensity >= 21 AND enddensity < 22"
 				},
 				{
-					"name": "DENSITY 22〜23",
+					"name": "DENSITY 22 - 23",
 					"sql": "enddensity >= 22 AND enddensity < 23"
 				},
 				{
-					"name": "DENSITY 23〜24",
+					"name": "DENSITY 23 - 24",
 					"sql": "enddensity >= 23 AND enddensity < 24"
 				},
 				{
-					"name": "DENSITY 24〜25",
+					"name": "DENSITY 24 - 25",
 					"sql": "enddensity >= 24 AND enddensity < 25"
 				},
 				{
-					"name": "DENSITY 25〜26",
+					"name": "DENSITY 25 - 26",
 					"sql": "enddensity >= 25 AND enddensity < 26"
 				},
 				{
-					"name": "DENSITY 26〜27",
+					"name": "DENSITY 26 - 27",
 					"sql": "enddensity >= 26 AND enddensity < 27"
 				},
 				{
-					"name": "DENSITY 27〜28",
+					"name": "DENSITY 27 - 28",
 					"sql": "enddensity >= 27 AND enddensity < 28"
 				},
 				{
-					"name": "DENSITY 28〜29",
+					"name": "DENSITY 28 - 29",
 					"sql": "enddensity >= 28 AND enddensity < 29"
 				},
 				{
-					"name": "DENSITY 29〜30",
+					"name": "DENSITY 29 - 30",
 					"sql": "enddensity >= 29 AND enddensity < 30"
 				},
-
 				{
-					"name": "DENSITY 30〜31",
+					"name": "DENSITY 30 - 31",
 					"sql": "enddensity >= 30 AND enddensity < 31"
 				},
 				{
-					"name": "DENSITY 31〜32",
+					"name": "DENSITY 31 - 32",
 					"sql": "enddensity >= 31 AND enddensity < 32"
 				},
 				{
-					"name": "DENSITY 32〜33",
+					"name": "DENSITY 32 - 33",
 					"sql": "enddensity >= 32 AND enddensity < 33"
 				},
 				{
-					"name": "DENSITY 33〜34",
+					"name": "DENSITY 33 - 34",
 					"sql": "enddensity >= 33 AND enddensity < 34"
 				},
 				{
-					"name": "DENSITY 34〜35",
+					"name": "DENSITY 34 - 35",
 					"sql": "enddensity >= 34 AND enddensity < 35"
 				},
 				{
-					"name": "DENSITY 35〜36",
+					"name": "DENSITY 35 - 36",
 					"sql": "enddensity >= 35 AND enddensity < 36"
 				},
 				{
-					"name": "DENSITY 36〜37",
+					"name": "DENSITY 36 - 37",
 					"sql": "enddensity >= 36 AND enddensity < 37"
 				},
 				{
-					"name": "DENSITY 37〜38",
+					"name": "DENSITY 37 - 38",
 					"sql": "enddensity >= 37 AND enddensity < 38"
 				},
 				{
-					"name": "DENSITY 38〜39",
+					"name": "DENSITY 38 - 39",
 					"sql": "enddensity >= 38 AND enddensity < 39"
 				},
 				{
-					"name": "DENSITY 39〜40",
+					"name": "DENSITY 39 - 40",
 					"sql": "enddensity >= 39 AND enddensity < 40"
 				},
-
 				{
-					"name": "DENSITY 40〜41",
+					"name": "DENSITY 40 - 41",
 					"sql": "enddensity >= 40 AND enddensity < 41"
 				},
 				{
-					"name": "DENSITY 41〜42",
+					"name": "DENSITY 41 - 42",
 					"sql": "enddensity >= 41 AND enddensity < 42"
 				},
 				{
-					"name": "DENSITY 42〜43",
+					"name": "DENSITY 42 - 43",
 					"sql": "enddensity >= 42 AND enddensity < 43"
 				},
 				{
-					"name": "DENSITY 43〜44",
+					"name": "DENSITY 43 - 44",
 					"sql": "enddensity >= 43 AND enddensity < 44"
 				},
 				{
-					"name": "DENSITY 44〜45",
+					"name": "DENSITY 44 - 45",
 					"sql": "enddensity >= 44 AND enddensity < 45"
 				},
 				{
-					"name": "DENSITY 45〜46",
+					"name": "DENSITY 45 - 46",
 					"sql": "enddensity >= 45 AND enddensity < 46"
 				},
 				{
-					"name": "DENSITY 46〜47",
+					"name": "DENSITY 46 - 47",
 					"sql": "enddensity >= 46 AND enddensity < 47"
 				},
 				{
-					"name": "DENSITY 47〜48",
+					"name": "DENSITY 47 - 48",
 					"sql": "enddensity >= 47 AND enddensity < 48"
 				},
 				{
-					"name": "DENSITY 48〜49",
+					"name": "DENSITY 48 - 49",
 					"sql": "enddensity >= 48 AND enddensity < 49"
 				},
 				{
-					"name": "DENSITY 49〜50",
+					"name": "DENSITY 49 - 50",
 					"sql": "enddensity >= 49 AND enddensity < 50"
 				},
 				{
-					"name": "DENSITY 50〜",
+					"name": "DENSITY 50以上",
 					"sql": "enddensity >= 50"
 				}
 			]
@@ -671,35 +1483,35 @@
 },
 
 {
-	"name":"FEATURE",
+	"name":"譜面傾向",
 	"folder":[
 		{
-			"name": "SCRATCH 10 - 20%",
+			"name": "スクラッチ 10 - 20%",
 			"sql":"(n + ln) <= (s + ls) * 9 AND (n + ln) > (s + ls) * 4"
 		},
 		{
-			"name":"SCRATCH > 20%", 
+			"name":"スクラッチ 20%以上", 
 			"sql":"(n + ln) <= (s + ls) * 4"
 		},
 		{
-			"name":"LONG NOTE 10 - 20%", 
+			"name":"ロングノート 10 - 20%", 
 			"sql":"(n + s) <= (ln + ls) * 9 AND (n + s) > (ln + ls) * 4"
 		},
 		{
-			"name":"LONG NOTE > 20%", 
+			"name":"ロングノート 20%以上", 
 			"sql":"(n + s) <= (ln + ls) * 4"
 		}
 	]
 },
 
 {
-	"name":"LEVEL",
+	"name":"譜面難易度",
 	"folder":[
 		{
 			"name":"7KEYS",
 			"folder":[
 				{
-					"name":"LEVEL 〜0",
+					"name":"LEVEL 0以下",
 					"sql":"(level <= 0 OR level IS NULL) AND song.mode = 7"
 				},
 				{
@@ -751,7 +1563,7 @@
 					"sql":"level = 12 AND song.mode = 7"
 				},
 				{
-					"name":"LEVEL 13〜",
+					"name":"LEVEL 13以上",
 					"sql":"level >= 13 AND song.mode = 7"
 				}
 			]
@@ -760,7 +1572,7 @@
 			"name":"14KEYS",
 			"folder":[
 				{
-					"name":"LEVEL 〜0",
+					"name":"LEVEL 0以下",
 					"sql":"(level <= 0 OR level IS NULL) AND song.mode = 14"
 				},
 				{
@@ -812,7 +1624,7 @@
 					"sql":"level = 12 AND song.mode = 14"
 				},
 				{
-					"name":"LEVEL 13〜",
+					"name":"LEVEL 13以上",
 					"sql":"level >= 13 AND song.mode = 14"
 				}
 			]
@@ -821,7 +1633,7 @@
 			"name":"9KEYS",
 			"folder":[
 				{
-					"name":"LEVEL 〜0",
+					"name":"LEVEL 0以下",
 					"sql":"(level <= 0 OR level IS NULL) AND song.mode = 9"
 				},
 				{
@@ -1025,7 +1837,7 @@
 					"sql":"level = 50 AND song.mode = 9"
 				},
 				{
-					"name":"LEVEL 51〜",
+					"name":"LEVEL 51以上",
 					"sql":"level >= 51 AND song.mode = 9"
 				}
 			]
@@ -1034,7 +1846,7 @@
 			"name":"5KEYS",
 			"folder":[
 				{
-					"name":"LEVEL 〜0",
+					"name":"LEVEL 0以下",
 					"sql":"(level <= 0 OR level IS NULL) AND song.mode = 5"
 				},
 				{
@@ -1074,20 +1886,8 @@
 					"sql":"level = 9 AND song.mode = 5"
 				},
 				{
-					"name":"LEVEL 10",
-					"sql":"level = 10 AND song.mode = 5"
-				},
-				{
-					"name":"LEVEL 11",
-					"sql":"level = 11 AND song.mode = 5"
-				},
-				{
-					"name":"LEVEL 12",
-					"sql":"level = 12 AND song.mode = 5"
-				},
-				{
-					"name":"LEVEL 13〜",
-					"sql":"level >= 13 AND song.mode = 5"
+					"name":"LEVEL 10以上",
+					"sql":"level >= 10 AND song.mode = 5"
 				}
 			]
 		},
@@ -1095,7 +1895,7 @@
 			"name":"10KEYS",
 			"folder":[
 				{
-					"name":"LEVEL 〜0",
+					"name":"LEVEL 0以下",
 					"sql":"(level <= 0 OR level IS NULL) AND song.mode = 10"
 				},
 				{
@@ -1135,20 +1935,8 @@
 					"sql":"level = 9 AND song.mode = 10"
 				},
 				{
-					"name":"LEVEL 10",
-					"sql":"level = 10 AND song.mode = 10"
-				},
-				{
-					"name":"LEVEL 11",
-					"sql":"level = 11 AND song.mode = 10"
-				},
-				{
-					"name":"LEVEL 12",
-					"sql":"level = 12 AND song.mode = 10"
-				},
-				{
-					"name":"LEVEL 13〜",
-					"sql":"level >= 13 AND song.mode = 10"
+					"name":"LEVEL 10以上",
+					"sql":"level >= 10 AND song.mode = 10"
 				}
 			]
 		},
@@ -1156,7 +1944,7 @@
 			"name":"24KEYS",
 			"folder":[
 				{
-					"name":"LEVEL 〜0",
+					"name":"LEVEL 0以下",
 					"sql":"(level <= 0 OR level IS NULL) AND song.mode = 25"
 				},
 				{
@@ -1184,7 +1972,7 @@
 					"sql":"level = 6 AND song.mode = 25"
 				},
 				{
-					"name":"LEVEL 7〜",
+					"name":"LEVEL 7以上",
 					"sql":"level >= 7 AND song.mode = 25"
 				}
 			]
@@ -1193,7 +1981,7 @@
 			"name":"48KEYS",
 			"folder":[
 				{
-					"name":"LEVEL 〜0",
+					"name":"LEVEL 0以下",
 					"sql":"(level <= 0 OR level IS NULL) AND song.mode = 50"
 				},
 				{
@@ -1221,7 +2009,7 @@
 					"sql":"level = 6 AND song.mode = 50"
 				},
 				{
-					"name":"LEVEL 7〜",
+					"name":"LEVEL 7以上",
 					"sql":"level >= 7 AND song.mode = 50"
 				}
 			]
@@ -1230,38 +2018,38 @@
 },
 
 {
-  "name":"NEW",
+  "name":"新規追加楽曲",
   "folder":[
 		{
-			"name":"TODAY",
+			"name":"本日",
 			"sql":"strftime('%s', 'now') - adddate <= 86400"
 		},
 		{
-			"name":"2 DAYS AGO",
+			"name":"2日前",
 			"sql":"strftime('%s', 'now') - adddate > 86400*1 AND strftime('%s', 'now') - adddate <= 86400*2"
 		},
 		{
-			"name":"3 DAYS AGO",
+			"name":"3日前",
 			"sql":"strftime('%s', 'now') - adddate > 86400*2 AND strftime('%s', 'now') - adddate <= 86400*3"
 		},
 		{
-			"name":"4 DAYS AGO",
+			"name":"4日前",
 			"sql":"strftime('%s', 'now') - adddate > 86400*3 AND strftime('%s', 'now') - adddate <= 86400*4"
 		},
 		{
-			"name":"5 DAYS AGO",
+			"name":"5日前",
 			"sql":"strftime('%s', 'now') - adddate > 86400*4 AND strftime('%s', 'now') - adddate <= 86400*5"
 		},
 		{
-			"name":"6 DAYS AGO",
+			"name":"6日前",
 			"sql":"strftime('%s', 'now') - adddate > 86400*5 AND strftime('%s', 'now') - adddate <= 86400*6"
 		},
 		{
-			"name":"7 DAYS AGO",
+			"name":"7日前",
 			"sql":"strftime('%s', 'now') - adddate > 86400*6 AND strftime('%s', 'now') - adddate <= 86400*7"
 		},
 		{
-			"name":"THIS WEEK",
+			"name":"8日前",
 			"sql":"strftime('%s', 'now') - adddate <= 86400*7"
 		}
 	]
