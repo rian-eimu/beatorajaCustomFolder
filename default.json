@@ -1,9 +1,14 @@
 [
-{
-	"name":"BEST 30",
-	"sql":"playcount > 0 ORDER BY playcount DESC LIMIT 30"
-},
+	{
+		"name":"BEST 30",
+		"sql":"playcount > 0 ORDER BY playcount DESC LIMIT 30"
+	},
 
+	{
+		"name":"RECENT 30",
+		"sql":"score.playcount > 0 ORDER BY score.date DESC LIMIT 30"
+	},
+	
 {
 	"name":"お気に入り楽曲",
 	"sql":"favorite & 1 != 0"
@@ -344,7 +349,7 @@
 	"folder":[
 		{
 			"name":"50未満",
-			"sql":"maxbpm < 50"
+			"sql":"maxbpm < 50 ORDER BY maxbpm ASC"
 		},
 		{
 			"name":"50 - 59",
@@ -823,6 +828,18 @@
 		{
 			"name":"2022年",
 			"sql":"song.date >= 1640962800 AND song.date < 1672498800"
+		},
+		{
+			"name":"2023年",
+			"sql":"song.date >= 1672498800 AND song.date < 1704034800"
+		},
+		{
+			"name":"2024年",
+			"sql":"song.date >= 1704034800 AND song.date < 1735570800"
+		},
+		{
+			"name":"2025年",
+			"sql":"song.date >= 1735570800 AND song.date < 1767106800"
 		}
 	]
 },
