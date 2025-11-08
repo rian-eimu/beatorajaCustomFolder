@@ -840,6 +840,10 @@
 		{
 			"name":"2025年",
 			"sql":"song.date >= 1735570800 AND song.date < 1767106800"
+		},
+		{
+			"name":"2026年",
+			"sql":"song.date >= 1767106800 AND song.date < 1798642800"
 		}
 	]
 },
